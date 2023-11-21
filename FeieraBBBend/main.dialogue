@@ -1,0 +1,23 @@
+~ main
+
+if global.given_teacher_item == true
+	Teacher: [[Hey!|Greetings!]] Thank you for bringing me my paper for the LB.
+	Teacher: You are definetly one of my favorite Students.
+	=> END
+
+if global.found_teacher_item == false
+	Teacher: [[Hello|Greetings|Nice to meet you|Good evening]] young student! Don't mind mey crying here...
+	- Goodbye. => END
+	- Why are you crying?
+		Teacher: I'm so sad that school is already over and I still have so much to do. Do you maybe want to help me?
+		- No! => END
+		- Sure, but only if I get some extra points at my next LB.
+		Teacher: Bring me some paper for the LB, so I cant print the LB sheets for tomorrow. 
+		=> END
+
+if global.found_teacher_item == true
+	Teacher: Oh... you got the paper! I'll make sure that you get some extra points in the next LB!
+	set global.given_teacher_item = true
+	=> END
+
+=> END
