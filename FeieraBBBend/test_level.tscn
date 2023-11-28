@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://4es68oa4218f"]
+[gd_scene load_steps=20 format=3 uid="uid://4es68oa4218f"]
 
 [ext_resource type="Texture2D" uid="uid://dfdch4evwyd10" path="res://assets/modern-city-assets/street.png" id="1_prxxi"]
 [ext_resource type="Script" path="res://test_level.gd" id="1_vj07q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d2aadia4243b6" path="res://assets/AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_ALL_By_AxulArt.png" id="6_mtoa4"]
 [ext_resource type="PackedScene" uid="uid://bi2s52idavnpg" path="res://scenes/teacher.tscn" id="8_uq14t"]
 [ext_resource type="Texture2D" uid="uid://bj7uk6bt1jddn" path="res://assets/doc.png" id="9_c6apb"]
+[ext_resource type="PackedScene" uid="uid://6nhat3yx638k" path="res://enemy.tscn" id="11_o1hhk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sipev"]
 texture = ExtResource("1_prxxi")
@@ -2846,6 +2847,7 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
 
 [node name="student" parent="." instance=ExtResource("1_yub0d")]
+collision_layer = 3
 
 [node name="teacher" parent="." instance=ExtResource("8_uq14t")]
 position = Vector2(92, -10)
@@ -2864,6 +2866,9 @@ texture = ExtResource("9_c6apb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paper/detection_paper"]
 scale = Vector2(-1.50068, 1.53438)
 shape = SubResource("CircleShape2D_srgqt")
+
+[node name="enemy" parent="." instance=ExtResource("11_o1hhk")]
+position = Vector2(350, -253)
 
 [connection signal="body_entered" from="paper/detection_paper" to="student" method="_on_detection_paper_body_entered"]
 [connection signal="body_exited" from="paper/detection_paper" to="student" method="_on_detection_paper_body_exited"]
