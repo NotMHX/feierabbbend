@@ -1,15 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://4es68oa4218f"]
+[gd_scene load_steps=19 format=3 uid="uid://4es68oa4218f"]
 
-[ext_resource type="PackedScene" uid="uid://b0nbuy331q5q8" path="res://player.tscn" id="1_yub0d"]
-[ext_resource type="Texture2D" uid="uid://dwk1v4egbgxh1" path="res://modern-city-assets/buildings.png" id="2_0au5l"]
-[ext_resource type="Texture2D" uid="uid://dfdch4evwyd10" path="res://modern-city-assets/street.png" id="2_jujo8"]
-[ext_resource type="Texture2D" uid="uid://cxgpkv25otttw" path="res://modern-city-assets/fences.png" id="3_7ftaj"]
-[ext_resource type="Texture2D" uid="uid://dgj5iqvb5phn4" path="res://modern-city-assets/vehicles.png" id="4_00wdx"]
-[ext_resource type="Texture2D" uid="uid://cq4kydsiupye2" path="res://AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_By_AxulArt.png" id="5_njkao"]
-[ext_resource type="Texture2D" uid="uid://d2aadia4243b6" path="res://AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_ALL_By_AxulArt.png" id="6_j5p1c"]
+[ext_resource type="Texture2D" uid="uid://dfdch4evwyd10" path="res://assets/modern-city-assets/street.png" id="1_prxxi"]
+[ext_resource type="Script" path="res://test_level.gd" id="1_vj07q"]
+[ext_resource type="PackedScene" uid="uid://b0nbuy331q5q8" path="res://scenes/player.tscn" id="1_yub0d"]
+[ext_resource type="Texture2D" uid="uid://dwk1v4egbgxh1" path="res://assets/modern-city-assets/buildings.png" id="2_oxcgg"]
+[ext_resource type="Texture2D" uid="uid://cxgpkv25otttw" path="res://assets/modern-city-assets/fences.png" id="3_5y61v"]
+[ext_resource type="Texture2D" uid="uid://dgj5iqvb5phn4" path="res://assets/modern-city-assets/vehicles.png" id="4_2xot7"]
+[ext_resource type="Texture2D" uid="uid://cq4kydsiupye2" path="res://assets/AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_By_AxulArt.png" id="5_ffu1d"]
+[ext_resource type="Texture2D" uid="uid://d2aadia4243b6" path="res://assets/AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_ALL_By_AxulArt.png" id="6_mtoa4"]
+[ext_resource type="PackedScene" uid="uid://bi2s52idavnpg" path="res://scenes/teacher.tscn" id="8_uq14t"]
+[ext_resource type="Texture2D" uid="uid://bj7uk6bt1jddn" path="res://assets/doc.png" id="9_c6apb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sipev"]
-texture = ExtResource("2_jujo8")
+texture = ExtResource("1_prxxi")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -663,7 +666,7 @@ texture = ExtResource("2_jujo8")
 6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oadng"]
-texture = ExtResource("2_0au5l")
+texture = ExtResource("2_oxcgg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1224,7 +1227,7 @@ texture = ExtResource("2_0au5l")
 15:13/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t01r0"]
-texture = ExtResource("3_7ftaj")
+texture = ExtResource("3_5y61v")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1419,7 +1422,7 @@ texture = ExtResource("3_7ftaj")
 3:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mu4b"]
-texture = ExtResource("4_00wdx")
+texture = ExtResource("4_2xot7")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1769,7 +1772,7 @@ texture = ExtResource("4_00wdx")
 2:14/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7j2x"]
-texture = ExtResource("5_njkao")
+texture = ExtResource("5_ffu1d")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2057,7 +2060,7 @@ texture = ExtResource("5_njkao")
 11:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qd1is"]
-texture = ExtResource("6_j5p1c")
+texture = ExtResource("6_mtoa4")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2815,7 +2818,11 @@ sources/5 = SubResource("TileSetAtlasSource_1mu4b")
 sources/6 = SubResource("TileSetAtlasSource_q7j2x")
 sources/7 = SubResource("TileSetAtlasSource_qd1is")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_srgqt"]
+radius = 19.3368
+
 [node name="test_level" type="Node2D"]
+script = ExtResource("1_vj07q")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(3, 3)
@@ -2839,3 +2846,24 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
 
 [node name="student" parent="." instance=ExtResource("1_yub0d")]
+
+[node name="teacher" parent="." instance=ExtResource("8_uq14t")]
+position = Vector2(92, -10)
+scale = Vector2(0.06, 0.06)
+
+[node name="paper" type="StaticBody2D" parent="."]
+position = Vector2(-150, -1)
+scale = Vector2(1, 0.948604)
+
+[node name="Sprite2D" type="Sprite2D" parent="paper"]
+scale = Vector2(0.05, 0.0503242)
+texture = ExtResource("9_c6apb")
+
+[node name="detection_paper" type="Area2D" parent="paper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paper/detection_paper"]
+scale = Vector2(-1.50068, 1.53438)
+shape = SubResource("CircleShape2D_srgqt")
+
+[connection signal="body_entered" from="paper/detection_paper" to="student" method="_on_detection_paper_body_entered"]
+[connection signal="body_exited" from="paper/detection_paper" to="student" method="_on_detection_paper_body_exited"]
