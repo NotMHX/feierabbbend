@@ -1,7 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://b0nbuy331q5q8"]
+[gd_scene load_steps=27 format=3 uid="uid://b0nbuy331q5q8"]
 
 [ext_resource type="Script" path="res://student.gd" id="1_vb2jq"]
 [ext_resource type="Texture2D" uid="uid://du05xs70ufgrt" path="res://assets/feierabbbend_character.png" id="2_8hs62"]
+[ext_resource type="Resource" uid="uid://baf6gr7rlv3w5" path="res://resources/PlayerInventory.tres" id="2_yqr01"]
+[ext_resource type="PackedScene" uid="uid://dure4f16pv5o6" path="res://scenes/inventory_ui.tscn" id="4_lhm8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnsi5"]
 size = Vector2(56, 78)
@@ -179,6 +181,7 @@ radius = 52.0096
 
 [node name="student" type="CharacterBody2D"]
 script = ExtResource("1_vb2jq")
+inventory = ExtResource("2_yqr01")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.69565, 2.41026)
@@ -204,6 +207,12 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/Idle/blend_position = Vector2(0.336127, 0.206304)
 parameters/Walking/blend_position = Vector2(-0.282481, -0.774306)
+
+[node name="Inventory_UI" parent="." instance=ExtResource("4_lhm8s")]
+offset_left = -57.0
+offset_top = -117.0
+offset_right = -57.0
+offset_bottom = -117.0
 
 [node name="detection" type="Area2D" parent="."]
 
