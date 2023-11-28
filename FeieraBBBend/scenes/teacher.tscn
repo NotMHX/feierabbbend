@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi2s52idavnpg"]
+
+[ext_resource type="Script" path="res://teacher.gd" id="1_1mf6m"]
+[ext_resource type="Texture2D" uid="uid://c7afj3xbnoona" path="res://assets/en total echte bbb lehrer.png" id="1_i8p02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j21e7"]
+size = Vector2(572.5, 1823)
+
+[node name="teacher" type="CharacterBody2D"]
+script = ExtResource("1_1mf6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.75, 41.5)
+shape = SubResource("RectangleShape2D_j21e7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i8p02")
