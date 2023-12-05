@@ -1,7 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://4es68oa4218f"]
+[gd_scene load_steps=17 format=3 uid="uid://4es68oa4218f"]
 
 [ext_resource type="Texture2D" uid="uid://dfdch4evwyd10" path="res://assets/modern-city-assets/street.png" id="1_prxxi"]
-[ext_resource type="Script" path="res://test_level.gd" id="1_vj07q"]
 [ext_resource type="PackedScene" uid="uid://b0nbuy331q5q8" path="res://scenes/player.tscn" id="1_yub0d"]
 [ext_resource type="Texture2D" uid="uid://dwk1v4egbgxh1" path="res://assets/modern-city-assets/buildings.png" id="2_oxcgg"]
 [ext_resource type="Texture2D" uid="uid://cxgpkv25otttw" path="res://assets/modern-city-assets/fences.png" id="3_5y61v"]
@@ -9,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cq4kydsiupye2" path="res://assets/AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_By_AxulArt.png" id="5_ffu1d"]
 [ext_resource type="Texture2D" uid="uid://d2aadia4243b6" path="res://assets/AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_ALL_By_AxulArt.png" id="6_mtoa4"]
 [ext_resource type="PackedScene" uid="uid://bi2s52idavnpg" path="res://scenes/teacher.tscn" id="8_uq14t"]
-[ext_resource type="Texture2D" uid="uid://bj7uk6bt1jddn" path="res://assets/doc.png" id="9_c6apb"]
+[ext_resource type="PackedScene" uid="uid://bhmck5yaluaxq" path="res://scenes/paper.tscn" id="10_i3jyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sipev"]
 texture = ExtResource("1_prxxi")
@@ -2818,11 +2817,7 @@ sources/5 = SubResource("TileSetAtlasSource_1mu4b")
 sources/6 = SubResource("TileSetAtlasSource_q7j2x")
 sources/7 = SubResource("TileSetAtlasSource_qd1is")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_srgqt"]
-radius = 19.3368
-
 [node name="test_level" type="Node2D"]
-script = ExtResource("1_vj07q")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(3, 3)
@@ -2851,19 +2846,5 @@ layer_2/tile_data = PackedInt32Array()
 position = Vector2(92, -10)
 scale = Vector2(0.06, 0.06)
 
-[node name="paper" type="StaticBody2D" parent="."]
-position = Vector2(-150, -1)
-scale = Vector2(1, 0.948604)
-
-[node name="Sprite2D" type="Sprite2D" parent="paper"]
-scale = Vector2(0.05, 0.0503242)
-texture = ExtResource("9_c6apb")
-
-[node name="detection_paper" type="Area2D" parent="paper"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="paper/detection_paper"]
-scale = Vector2(-1.50068, 1.53438)
-shape = SubResource("CircleShape2D_srgqt")
-
-[connection signal="body_entered" from="paper/detection_paper" to="student" method="_on_detection_paper_body_entered"]
-[connection signal="body_exited" from="paper/detection_paper" to="student" method="_on_detection_paper_body_exited"]
+[node name="paper" parent="." instance=ExtResource("10_i3jyh")]
+position = Vector2(-143, 2)

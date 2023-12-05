@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://0hi3xlw518le"]
+
+[ext_resource type="Script" path="res://slot.gd" id="1_kec2c"]
+[ext_resource type="Texture2D" uid="uid://crf7njeqqmy5q" path="res://assets/dark_brown.png" id="1_uhu4c"]
+
+[node name="slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 25)
+offset_right = 25.0
+offset_bottom = 25.0
+script = ExtResource("1_kec2c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12.3945, 12.6738)
+scale = Vector2(0.045181, 0.0474087)
+texture = ExtResource("1_uhu4c")
+
+[node name="show_item" type="Sprite2D" parent="."]
+scale = Vector2(0.0752688, 0.0807692)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(20, 26)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 23.0
+offset_bottom = 29.0
+scale = Vector2(0.5, 0.5)
+text = "99"
+horizontal_alignment = 2

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var max_speed := 300
+@export var inv: Inv
 var desired_velocity := Vector2.ZERO
 var steering_velcoity := Vector2.ZERO
 var teacher_in_range = false
@@ -56,6 +57,7 @@ func student():
 	pass
 	
 
-	
+func collect(item):
+	inv.insert(item)
 
 
