@@ -177,7 +177,10 @@ states/Walking/position = Vector2(389.696, 198.928)
 transitions = ["Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_33f6g"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_foacl")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdvmm"]
-radius = 52.0096
+radius = 49.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0w5vm"]
+radius = 40.0125
 
 [node name="student" type="CharacterBody2D"]
 script = ExtResource("1_vb2jq")
@@ -221,5 +224,29 @@ scale = Vector2(1.5, 1.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_jdvmm")
 
+[node name="student_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="student_hitbox"]
+shape = SubResource("CircleShape2D_0w5vm")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.305882, 1, 0.654902, 1)
+offset_left = -28.0
+offset_top = 39.0
+offset_right = 86.0
+offset_bottom = 66.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="regin_Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="student_hitbox" to="." method="_on_student_hitbox_body_entered"]
+[connection signal="body_exited" from="student_hitbox" to="." method="_on_student_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="regin_Timer" to="." method="_on_regin_timer_timeout"]
