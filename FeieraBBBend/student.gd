@@ -18,10 +18,14 @@ func _physics_process(delta: float) -> void:
 	velocity += steering_velcoity
 	# rotation = velocity.angle()
 	enemy_attack()
+	update_health()
+	
 	
 	if health <= 0:
 		health = 0
 		print("player died")
+		get_tree().reload_current_scene()
+
 	
 
 	if velocity == Vector2.ZERO:
@@ -86,3 +90,21 @@ func enemy_attack():
 
 func _on_attack_cooldown_timeout():
 	enemy_attackcooldown = true
+
+
+func update_health():
+	var HealthBar = $HealthBar
+	HealthBar.value = health
+	
+	if health >= 100:
+		HealthBar.visible = false
+	else:
+		HealthBar.visible = true
+
+func _on_regin_timer_timeout():
+	if health < 100:
+		health = health + 20
+		if health > 100:
+			health = 100
+	if health <= 0:
+		health = 0
