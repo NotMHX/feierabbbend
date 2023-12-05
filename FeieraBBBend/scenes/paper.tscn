@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhmck5yaluaxq"]
+
+[ext_resource type="Script" path="res://paper.gd" id="1_ojoo8"]
+[ext_resource type="Texture2D" uid="uid://bj7uk6bt1jddn" path="res://assets/doc.png" id="1_x4ceu"]
+[ext_resource type="Resource" uid="uid://ddg0on4jukuqc" path="res://resources/paper.tres" id="2_6gosj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkuec"]
+radius = 19.3368
+
+[node name="paper" type="StaticBody2D"]
+script = ExtResource("1_ojoo8")
+item = ExtResource("2_6gosj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.0503242)
+texture = ExtResource("1_x4ceu")
+
+[node name="detection_paper" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_paper"]
+scale = Vector2(-1.50068, 1.53438)
+shape = SubResource("CircleShape2D_bkuec")
+
+[connection signal="body_entered" from="detection_paper" to="." method="_on_detection_paper_body_entered"]
+[connection signal="body_exited" from="detection_paper" to="." method="_on_detection_paper_body_exited"]
