@@ -6,12 +6,23 @@ var steering_velcoity := Vector2.ZERO
 var teacher_in_range = false
 var in_paper_dec = false
 
+var enemy_inattackrange = false
+var enemy_attackcooldown = true 
+var health = 100
+var player_alive = true
+
 func _physics_process(delta: float) -> void:
 	var direction =  Input.get_vector('move_left', 'move_right', 'move_up', "move_down")
 	desired_velocity = direction * max_speed
 	steering_velcoity = desired_velocity - velocity
 	velocity += steering_velcoity
 	# rotation = velocity.angle()
+	enemy_attack()
+	
+	if health <= 0:
+		health = 0
+		print("player died")
+	
 
 	if velocity == Vector2.ZERO:
 		$AnimationTree.get("parameters/playback").travel("Idle")
@@ -54,8 +65,24 @@ func _on_detection_body_exited(body):
 
 func student():
 	pass
-	
-
-	
 
 
+func _on_student_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattackrange = true
+
+
+func _on_student_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattackrange = false
+
+func enemy_attack():
+	if enemy_inattackrange and enemy_attackcooldown == true:
+		health -= 20
+		enemy_attackcooldown = false
+		$attack_cooldown.start()
+		print(health)
+
+
+func _on_attack_cooldown_timeout():
+	enemy_attackcooldown = true

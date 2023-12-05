@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b0nbuy331q5q8"]
+[gd_scene load_steps=26 format=3 uid="uid://b0nbuy331q5q8"]
 
 [ext_resource type="Script" path="res://student.gd" id="1_vb2jq"]
 [ext_resource type="Texture2D" uid="uid://du05xs70ufgrt" path="res://assets/feierabbbend_character.png" id="2_8hs62"]
@@ -175,7 +175,10 @@ states/Walking/position = Vector2(389.696, 198.928)
 transitions = ["Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_33f6g"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_foacl")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdvmm"]
-radius = 52.0096
+radius = 49.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0w5vm"]
+radius = 40.0125
 
 [node name="student" type="CharacterBody2D"]
 script = ExtResource("1_vb2jq")
@@ -210,5 +213,15 @@ parameters/Walking/blend_position = Vector2(-0.282481, -0.774306)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 shape = SubResource("CircleShape2D_jdvmm")
 
+[node name="student_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="student_hitbox"]
+shape = SubResource("CircleShape2D_0w5vm")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="student_hitbox" to="." method="_on_student_hitbox_body_entered"]
+[connection signal="body_exited" from="student_hitbox" to="." method="_on_student_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
