@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b0nbuy331q5q8"]
+[gd_scene load_steps=28 format=3 uid="uid://b0nbuy331q5q8"]
 
 [ext_resource type="Script" path="res://student.gd" id="1_vb2jq"]
 [ext_resource type="Texture2D" uid="uid://du05xs70ufgrt" path="res://assets/feierabbbend_character.png" id="2_8hs62"]
