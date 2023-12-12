@@ -38,10 +38,16 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()	
 
 	if teacher_in_range == true:
-		if Input.is_action_just_pressed("accept"):
+		if Input.is_action_just_pressed("accept") && global.accepted_quest == false:
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "main")
+			global.accepted_quest = true
+			$QuestLog.update_quest_log()
 			return
-			
+		elif Input.is_action_just_pressed("accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "main")
+			$QuestLog.update_quest_log()
+			return
+
 	if in_paper_dec == true:
 		if Input.is_action_just_pressed("accept"):
 			global.found_teacher_item = true

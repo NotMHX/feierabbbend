@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cq4kydsiupye2" path="res://assets/AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_By_AxulArt.png" id="5_ffu1d"]
 [ext_resource type="Texture2D" uid="uid://d2aadia4243b6" path="res://assets/AxulArt´s_Basic-Top-down-interior_By_AxulArt/AxulArt´s_Basic-Top-down-interior_ALL_By_AxulArt.png" id="6_mtoa4"]
 [ext_resource type="PackedScene" uid="uid://bi2s52idavnpg" path="res://scenes/teacher.tscn" id="8_uq14t"]
-[ext_resource type="PackedScene" uid="uid://6nhat3yx638k" path="res://enemy.tscn" id="10_0m3as"]
+[ext_resource type="PackedScene" uid="uid://6nhat3yx638k" path="res://scenes/enemy.tscn" id="10_0m3as"]
 [ext_resource type="PackedScene" uid="uid://bhmck5yaluaxq" path="res://scenes/paper.tscn" id="10_i3jyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sipev"]
@@ -2845,7 +2845,7 @@ layer_2/tile_data = PackedInt32Array()
 collision_layer = 3
 
 [node name="teacher" parent="." instance=ExtResource("8_uq14t")]
-position = Vector2(92, -10)
+position = Vector2(-280, 94)
 scale = Vector2(0.06, 0.06)
 
 [node name="paper" parent="." instance=ExtResource("10_i3jyh")]
