@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dure4f16pv5o6" path="res://scenes/inventory_ui.tscn" id="4_lhm8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnsi5"]
-size = Vector2(56, 78)
+size = Vector2(56, 50)
 
 [sub_resource type="Animation" id="Animation_oawvk"]
 length = 0.75
@@ -193,7 +193,7 @@ hframes = 6
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -1)
+position = Vector2(2, 14)
 shape = SubResource("RectangleShape2D_lnsi5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
