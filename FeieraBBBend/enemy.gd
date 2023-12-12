@@ -8,7 +8,10 @@ func _physics_process(delta):
 	if player_chase:
 		position += (player.position - position)/speed
 		
-		
+		if(player.position.x - position.x) < 0:
+			$Sprite2D.flip_h = true
+		else:
+			$Sprite2D.flip_h = false
 
 func _on_detection_area_body_entered(body):
 	player = body

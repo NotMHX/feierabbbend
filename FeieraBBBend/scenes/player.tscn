@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chsdjambgjd56" path="res://scenes/quest_log.tscn" id="5_snt0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnsi5"]
-size = Vector2(56, 78)
+size = Vector2(56, 50)
 
 [sub_resource type="Animation" id="Animation_oawvk"]
 length = 0.75
@@ -194,7 +194,7 @@ hframes = 6
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -1)
+position = Vector2(2, 14)
 shape = SubResource("RectangleShape2D_lnsi5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
